@@ -1,0 +1,21 @@
+int Dia, Mes, Ano, Hoje, TotalDias, MesRestantes, MesAtual, DiasRestantes, DiasRestantesAnoInicial;
+
+                Console.WriteLine("Qual dia você nasceu?");
+                Dia = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Qual mês você nasceu?");
+                Mes = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Qual ano você nasceu?");
+                Ano = int.Parse(Console.ReadLine());
+
+                Hoje = (DateTime.Now.Year);
+                MesAtual = (DateTime.Now.Month);
+
+
+                TotalDias = (Hoje - Ano) * 365; //Total de dias entre a data que nasceu até ano atual.
+                MesRestantes = 12 - MesAtual; // Total de meses que falta para acabar o ano atual.
+                DiasRestantes = MesRestantes * 30; // Dias que ainda não viveu no ano atual, subitrair da conta.
+                DiasRestantesAnoInicial = (12 - Mes) * 30; // Dias antes do nascimento.
+
+                Console.WriteLine(TotalDias - DiasRestantes - (DiasRestantesAnoInicial - Dia));
